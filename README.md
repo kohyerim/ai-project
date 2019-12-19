@@ -72,7 +72,7 @@
   
      - Owner_Type과 가격의 관계 (boxplot)
   
-       <pre>util.boxplot('Owner_Type', 'Price')
+       <pre>util.boxplot('Owner_Type', 'Price')</pre>
   
        ![boxplot](https://github.com/kohyerim/ai-project/blob/master/boxplot.png)
   
@@ -80,7 +80,7 @@
   
      - Power_upd와 가격의 관계 (lmplot)
   
-       <pre>util.lmplot('Power_upd', 'Price', 'Owner_Type')
+       <pre>util.lmplot('Power_upd', 'Price', 'Owner_Type')</pre>
   
        ![lmplot](https://github.com/kohyerim/ai-project/blob/master/lmplot.png)
   
@@ -92,7 +92,7 @@
          히트맵을 그리기 전에, 숫자가 아닌 칼럼들을 수치화 해주어야 합니다.
          이 때 1, 2, 3 과 같은 대소관계가 있는 수치를 사용하면 안되고 0과 1로 이루어진 새로운 칼럼을 만들어서 수치화 해야 합니다.
          이렇게 수치화 하는 것을 원 핫 인코딩 이라고 합니다.
-         <pre>util.df = pd.get_dummies(util.df)
+         <pre>util.df = pd.get_dummies(util.df)</pre>
          Pandas 모듈에서 원 핫 인코딩을 지원하고 있어 객체의 멤버변수인 df에 접근하여 원 핫 인코딩을 해주는 get_dummies 함수를 실행합니다.
   
          원 핫 인코딩 후의 칼럼은 다음과 같습니다.
@@ -113,7 +113,7 @@
   
      - 'Power_upd', 'Engine_upd', 'Transmission' 칼럼을 이용한 예측
   
-       <pre>util.run_all(['Power_upd', 'Engine_upd', 'Transmission_Manual'], 'Price')
+       <pre>util.run_all(['Power_upd', 'Engine_upd', 'Transmission_Manual'], 'Price')</pre>
   
        'Power_upd', 'Engine_upd', 'Transmission' 칼럼을 이용해 가격을 예측하고, 그 정확도를 확인하면 다음과 같습니다.
   
@@ -126,7 +126,7 @@
   
      - 'Power_upd', 'Engine_upd', 'Transmission', 'Year_upd' 칼럼을 이용한 예측
   
-       <pre>util.run_all(['Power_upd', 'Engine_upd', 'Transmission_Manual', 'Year_upd'], 'Price')
+       <pre>util.run_all(['Power_upd', 'Engine_upd', 'Transmission_Manual', 'Year_upd'], 'Price')</pre>
   
        'Power_upd', 'Engine_upd', 'Transmission', 'Year_upd' 칼럼을 이용해 가격을 예측하고, 그 정확도를 확인하면 다음과 같습니다.
   
@@ -141,7 +141,7 @@
   
      - 'Power_upd', 'Engine_upd', 'Transmission', 'Year_upd', 'Mileage_upd' 칼럼을 이용한 예측
   
-       <pre>util.run_all(['Power_upd', 'Engine_upd', 'Transmission_Manual', 'Year_upd', 'Mileage_upd'], 'Price')
+       <pre>util.run_all(['Power_upd', 'Engine_upd', 'Transmission_Manual', 'Year_upd', 'Mileage_upd'], 'Price')</pre>
   
        'Power_upd', 'Engine_upd', 'Transmission', 'Year_upd', 'Mileage_upd' 칼럼을 이용해 가격을 예측하고, 그 정확도를 확인하면 다음과 같습니다.
   
