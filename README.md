@@ -42,12 +42,12 @@
      <pre>util.read('dataset.csv')
      </pre>
   
-     ![read](https://github.com/kohyerim/ai-project/read.png)
+     ![read](https://github.com/kohyerim/ai-project/blob/master/read.png)
   
      데이터 셋을 read 해오면 다음과 같이 출력됩니다.
      이 때, 필요하지 않은 칼럼들이 보이는데 이를 확인하기 위해 데이터셋 파일을 열어보면 아래와 같은 칼럼들을 확인할 수 있습니다.
   
-     ![dataset](https://github.com/kohyerim/ai-project/dataset_pic.png)
+     ![dataset](https://github.com/kohyerim/ai-project/blob/master/dataset_pic.png)
   
      - Unnamed: 0 - 단순한 인덱스 칼럼
      - Location : 중고차가 등록된 주소
@@ -74,7 +74,7 @@
   
        <pre>util.boxplot('Owner_Type', 'Price')
   
-       ![boxplot](https://github.com/kohyerim/ai-project/boxplot.png)
+       ![boxplot](https://github.com/kohyerim/ai-project/blob/master/boxplot.png)
   
        outlier의 값이 많아 가격과의 관계가 크다고 생각되지 않습니다.
   
@@ -82,32 +82,28 @@
   
        <pre>util.lmplot('Power_upd', 'Price', 'Owner_Type')
   
-       ![lmplot](https://github.com/kohyerim/ai-project/lmplot.png)
+       ![lmplot](https://github.com/kohyerim/ai-project/blob/master/lmplot.png)
   
        완벽한 일차함수의 그래프 모양은 아니지만, 꽤 상관관계가 있어 보입니다.
   
      - 히트맵 그리기
   
        - One-Hot-Encoding
-         히트맵을 그리기 전에, 숫자가 아닌 칼럼들을 수치화 해주어야 한다. 이 때 1, 2, 3 과 같은 대소관계가 있는 수치를 사용하면 안되고 0과 1로 이루어진 새로운 칼럼을 만들어서 수치화 해야 합니다. 이렇게 수치화 하는 것을 원 핫 인코딩 이라고 합니다.
-  
+         히트맵을 그리기 전에, 숫자가 아닌 칼럼들을 수치화 해주어야 합니다.
+         이 때 1, 2, 3 과 같은 대소관계가 있는 수치를 사용하면 안되고 0과 1로 이루어진 새로운 칼럼을 만들어서 수치화 해야 합니다.
+         이렇게 수치화 하는 것을 원 핫 인코딩 이라고 합니다.
          <pre>util.df = pd.get_dummies(util.df)
-  
          Pandas 모듈에서 원 핫 인코딩을 지원하고 있어 객체의 멤버변수인 df에 접근하여 원 핫 인코딩을 해주는 get_dummies 함수를 실행합니다.
   
          원 핫 인코딩 후의 칼럼은 다음과 같습니다.
-  
-         ![get_dummies](https://github.com/kohyerim/ai-project/get_dummies.png)
-  
+         ![get_dummies](https://github.com/kohyerim/ai-project/blob/master/get_dummies.png)
          숫자형이 아닌 칼럼이었던 Fuel_Type, Transmission, Owner_Type 칼럼이 숫자화 된 칼럼으로 변경된 것을 확인할 수 있습니다.
   
        - 히트맵 출력
-  
-         원 핫 인코딩 후, 칼럼들을 모두 이용해 히트맵을 그려보면 다음과 같다.
-  
+         원 핫 인코딩 후, 칼럼들을 모두 이용해 히트맵을 그려보면 다음과 같습니다.
          <pre>util.heatmap(['Kilometers_Driven', 'Seats', 'Price', 		'Mileage_upd','Engine_upd','Power_upd', 'Year_upd', 'Fuel_Type_CNG', 'Fuel_Type_Diesel','Fuel_Type_Electric', 'Fuel_Type_LPG', 'Fuel_Type_Petrol','Transmission_Automatic', 'Transmission_Manual', 'Owner_Type_First','Owner_Type_Fourth & Above', 'Owner_Type_Second', 'Owner_Type_Third'])</pre>
   
-         ![heatmap](https://github.com/kohyerim/ai-project/Heatmap.png)
+         ![heatmap](https://github.com/kohyerim/ai-project/blob/master/Heatmap.png)
   
          가격(Price)칼럼과 연관성이 높은 칼럼은 'Power_upd', 'Engine_upd', 'Transmission' 정도로 생각이 되며, 그 외에 'Year_upd', 'Mileage_upd'를 더 이용해 보겠습니다.
   
@@ -121,7 +117,7 @@
   
        'Power_upd', 'Engine_upd', 'Transmission' 칼럼을 이용해 가격을 예측하고, 그 정확도를 확인하면 다음과 같습니다.
   
-       ![run_all](https://github.com/kohyerim/ai-project/run_all.png)
+       ![run_all](https://github.com/kohyerim/ai-project/blob/master/run_all.png)
   
        - Linear Regression : 58%
        - K-Neighbor Regression : 74%
@@ -134,7 +130,7 @@
   
        'Power_upd', 'Engine_upd', 'Transmission', 'Year_upd' 칼럼을 이용해 가격을 예측하고, 그 정확도를 확인하면 다음과 같습니다.
   
-       ![addYear](https://github.com/kohyerim/ai-project/addYear.png)
+       ![addYear](https://github.com/kohyerim/ai-project/blob/master/addYear.png)
   
        - Linear Regression : 67%
        - K-Neighbor Regression : 82%
@@ -149,11 +145,12 @@
   
        'Power_upd', 'Engine_upd', 'Transmission', 'Year_upd', 'Mileage_upd' 칼럼을 이용해 가격을 예측하고, 그 정확도를 확인하면 다음과 같습니다.
   
-       ![addMileage](https://github.com/kohyerim/ai-project/addMileage.png)
+       ![addMileage](https://github.com/kohyerim/ai-project/blob/master/addMileage.png)
   
        - Linear Regression : 67%
        - K-Neighbor Regression : 82%
        - Decision Tree : 88%
        - Random Forest : 89%
   
-       4개의 칼럼을 이용했을 때와 비교해서 정확도가 비슷합니다.
+       4개의 칼럼을 이용했을 때와 비교하면 정확도가 비슷합니다.
+       - Random Forest : 89%
