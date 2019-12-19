@@ -155,7 +155,7 @@ PredictionUtil의 run_all 함수를 호출하면 선형회귀, K-Neighbor, 결�
 
   - Linear Regression : 67%
   - K-Neighbor Regression : 82%
-  - Decision Tree : 88%
-  - Random Forest : 89%
+  - Decision Tree : 86%
+  - Random Forest : 90%
 
   > 4개의 칼럼을 이용했을 때와 비교하면 정확도가 비슷합니다.
