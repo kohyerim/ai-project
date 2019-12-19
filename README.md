@@ -64,7 +64,7 @@
      - Power_upd : 엔진의 최대출력 (bhp)
      - Year_upd : 자동차의 제조연도
   
-     위의 칼럼들 중 중고차의 시세와 관계가 없다고 생각되는 칼럼들을 drop한다.
+     위의 칼럼들 중 중고차의 시세와 관계가 없다고 생각되는 칼럼들을 drop합니다.
   
      <pre>util.drop(['Unnamed: 0', 'brand_name', 'Location', 'New_Price'])
      </pre>
