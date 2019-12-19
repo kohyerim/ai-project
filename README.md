@@ -45,6 +45,7 @@
      ![read](https://github.com/kohyerim/ai-project/blob/master/read.png)
   
      데이터 셋을 read 해오면 다음과 같이 출력됩니다.
+     
      이 때, 필요하지 않은 칼럼들이 보이는데 이를 확인하기 위해 데이터셋 파일을 열어보면 아래와 같은 칼럼들을 확인할 수 있습니다.
   
      ![dataset](https://github.com/kohyerim/ai-project/blob/master/dataset_pic.png)
@@ -90,22 +91,38 @@
   
        - One-Hot-Encoding
          히트맵을 그리기 전에, 숫자가 아닌 칼럼들을 수치화 해주어야 합니다.
+         
          이 때 1, 2, 3 과 같은 대소관계가 있는 수치를 사용하면 안되고 0과 1로 이루어진 새로운 칼럼을 만들어서 수치화 해야 합니다.
+         
          이렇게 수치화 하는 것을 원 핫 인코딩 이라고 합니다.
+         
          <pre>util.df = pd.get_dummies(util.df)</pre>
+         
          Pandas 모듈에서 원 핫 인코딩을 지원하고 있어 객체의 멤버변수인 df에 접근하여 원 핫 인코딩을 해주는 get_dummies 함수를 실행합니다.
   
          원 핫 인코딩 후의 칼럼은 다음과 같습니다.
+         
          ![get_dummies](https://github.com/kohyerim/ai-project/blob/master/get_dummies.png)
+         
          숫자형이 아닌 칼럼이었던 Fuel_Type, Transmission, Owner_Type 칼럼이 숫자화 된 칼럼으로 변경된 것을 확인할 수 있습니다.
   
        - 히트맵 출력
          원 핫 인코딩 후, 칼럼들을 모두 이용해 히트맵을 그려보면 다음과 같습니다.
-         <pre>util.heatmap(['Kilometers_Driven', 'Seats', 'Price', 		'Mileage_upd','Engine_upd','Power_upd', 'Year_upd', 'Fuel_Type_CNG', 'Fuel_Type_Diesel','Fuel_Type_Electric', 'Fuel_Type_LPG', 'Fuel_Type_Petrol','Transmission_Automatic', 'Transmission_Manual', 'Owner_Type_First','Owner_Type_Fourth & Above', 'Owner_Type_Second', 'Owner_Type_Third'])</pre>
+         
+         <pre>util.heatmap(['Kilometers_Driven', 'Seats', 'Price',
+                            'Mileage_upd','Engine_upd','Power_upd',
+                            'Year_upd', 'Fuel_Type_CNG', 'Fuel_Type_Diesel',
+                            'Fuel_Type_Electric', 'Fuel_Type_LPG',
+                            'Fuel_Type_Petrol','Transmission_Automatic',
+                            'Transmission_Manual', 'Owner_Type_First',
+                            'Owner_Type_Fourth & Above', 'Owner_Type_Second',
+                            'Owner_Type_Third'])</pre>
   
          ![heatmap](https://github.com/kohyerim/ai-project/blob/master/Heatmap.png)
   
-         가격(Price)칼럼과 연관성이 높은 칼럼은 'Power_upd', 'Engine_upd', 'Transmission' 정도로 생각이 되며, 그 외에 'Year_upd', 'Mileage_upd'를 더 이용해 보겠습니다.
+         가격(Price)칼럼과 연관성이 높은 칼럼은 'Power_upd', 'Engine_upd', 'Transmission' 정도로 생각이 되어 이를 사용하겠습니다.
+         
+         그 외에 'Year_upd', 'Mileage_upd'를 더 이용해 보겠습니다.
   
   5. 상관관계를 이용하여 중고차 시세 예측하기 - run_all()
   
@@ -153,4 +170,3 @@
        - Random Forest : 89%
   
        4개의 칼럼을 이용했을 때와 비교하면 정확도가 비슷합니다.
-       - Random Forest : 89%
