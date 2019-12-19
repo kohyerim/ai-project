@@ -41,7 +41,6 @@ import pandas as pd</pre>
  ![read](https://github.com/kohyerim/ai-project/blob/master/read.png)
 
 > 데이터 셋을 read 해오면 다음과 같이 출력됩니다.
-
 >이 때, 필요하지 않은 칼럼들이 보이는데 이를 확인하기 위해 데이터셋 파일을 열어보면 아래와 같은 칼럼들을 확인할 수 있습니다.
 
 ![dataset](https://github.com/kohyerim/ai-project/blob/master/dataset_pic.png)
@@ -163,4 +162,4 @@ PredictionUtil의 run_all 함수를 호출하면 선형회귀, K-Neighbor, 결�
   - Decision Tree : 88%
   - Random Forest : 89%
 
-  4개의 칼럼을 이용했을 때와 비교하면 정확도가 비슷합니다.
+  > 4개의 칼럼을 이용했을 때와 비교하면 정확도가 비슷합니다.
