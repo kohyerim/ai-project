@@ -71,7 +71,7 @@ import pandas as pd</pre>
 
   ![boxplot](https://github.com/kohyerim/ai-project/blob/master/boxplot.png)
 
-  > utlier의 값이 많아 가격과의 관계가 크다고 생각되지 않습니다.
+  > outlier의 값이 많아 가격과의 관계가 크다고 생각되지 않습니다.
 
 - Power_upd와 가격의 관계 (lmplot)
 
@@ -102,14 +102,10 @@ import pandas as pd</pre>
 
      원 핫 인코딩 후, 칼럼들을 모두 이용해 히트맵을 그려보면 다음과 같습니다.
 
-     <pre>util.heatmap(['Kilometers_Driven', 'Seats', 'Price',
-                        'Mileage_upd','Engine_upd','Power_upd',
-                        'Year_upd', 'Fuel_Type_CNG', 'Fuel_Type_Diesel',
-                        'Fuel_Type_Electric', 'Fuel_Type_LPG',
-                        'Fuel_Type_Petrol','Transmission_Automatic',
-                        'Transmission_Manual', 'Owner_Type_First',
-                        'Owner_Type_Fourth & Above', 'Owner_Type_Second',
-                        'Owner_Type_Third'])</pre>
+     <pre>util.heatmap(['Kilometers_Driven', 'Seats', 'Price','Mileage_upd','Engine_upd','Power_upd',
+                        'Year_upd', 'Fuel_Type_CNG', 'Fuel_Type_Diesel','Fuel_Type_Electric',
+                        'Fuel_Type_LPG','Fuel_Type_Petrol','Transmission_Automatic',
+                        'Owner_Type_Fourth & Above','Owner_Type_Second','Owner_Type_Third'])</pre>
 
     ![heatmap](https://github.com/kohyerim/ai-project/blob/master/Heatmap.png)
 
